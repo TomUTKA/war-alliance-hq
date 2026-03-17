@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WAR #590 HQ</title>
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --panel: rgba(20, 20, 28, 0.92);
+      --panel-2: rgba(30, 30, 40, 0.92);
+      --gold: #f1c15a;
+      --gold-2: #ffde87;
+      --red: #c72d2d;
+      --red-2: #ff5722;
+      --text: #f4f4f5;
+      --muted: #b4b4bf;
+      --line: rgba(255,255,255,0.08);
+      --glow: 0 0 24px rgba(255, 133, 51, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255, 94, 0, 0.18), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(255, 196, 90, 0.12), transparent 25%),
+        linear-gradient(180deg, #111116 0%, #0a0a0d 45%, #08080a 100%);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 10, 14, 0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #2a0f0f, #612111 50%, #1a1a22);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: var(--glow);
+      color: var(--gold-2);
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 72px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .card,
+    .chat-frame {
+      background: linear-gradient(180deg, rgba(26, 26, 36, 0.94), rgba(14, 14, 20, 0.96));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38), var(--glow);
+    }
+
+    .hero-main {
+      position: relative;
+      overflow: hidden;
+      padding: 36px;
+      min-height: 420px;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 15%, rgba(255, 183, 77, 0.16), transparent 25%),
+        radial-gradient(circle at 100% 0%, rgba(255, 65, 54, 0.16), transparent 30%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--gold-2);
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 74px);
+      line-height: 0.95;
+      margin: 0 0 14px;
+      letter-spacing: -0.04em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(180deg, #fff2c3, #f1c15a 58%, #c17211 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 24px rgba(255, 183, 77, 0.08);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+      max-width: 58ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f5cc72, #d98e28 58%, #9b4816);
+      color: #1b1205;
+      box-shadow: 0 12px 24px rgba(214, 139, 40, 0.24);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 24px;
+    }
+
+    .card {
+      padding: 22px;
+    }
+
+    .server-card {
+      display: grid;
+      gap: 14px;
+    }
+
+    .server-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #1a1511, #6d210e 55%, #111217);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--glow);
+      font-size: 24px;
+    }
+
+    .server-name {
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .muted { color: var(--muted); }
+    .tiny { font-size: 13px; }
+
+    .stat-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .stat-chip {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 18px 0 50px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -0.04em;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .tier {
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(30, 30, 40, 0.95), rgba(16, 16, 22, 0.96));
+    }
+
+    .tier h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .tier ul,
+    .guide-list,
+    .rules-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .guide-list li,
+    .rules-list li,
+    .tier li { margin-bottom: 8px; }
+
+    .rule-box,
+    .announcement,
+    .faq,
+    .chat-frame {
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(26, 26, 36, 0.94), rgba(14, 14, 20, 0.96));
+    }
+
+    .announcement {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .announcement .date {
+      min-width: 110px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--gold-2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .announcement strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini-card {
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .mini-card strong { display: block; margin-bottom: 8px; }
+
+    .chat-frame iframe {
+      width: 100%;
+      height: 500px;
+      border: 0;
+      border-radius: 14px;
+      background: #111;
+    }
+
+    footer {
+      padding: 26px 0 46px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3 { grid-template-columns: 1fr; }
+
+      .hero { padding-top: 42px; }
+      .hero-main { min-height: unset; }
+      .nav { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge">⚔</div>
+        <div>WAR #590 HQ</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#spending">Spending Guide</a>
+        <a href="#power">Power Guide</a>
+        <a href="#rules">Rules</a>
+        <a href="#chat">Live Chat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow">🛡 WAR Alliance × State 590 × Tiles Survive</div>
+          <h1><span class="gradient-text">Fire &amp; Blood.</span><br />Command. Strategy. Victory.</h1>
+          <p>
+            Official headquarters for the WAR alliance in State 590. Coordinate battles, recruit warriors,
+            share strategies, and dominate the battlefield together. If Discord is restricted for you, this
+            page is the temporary fallback HQ.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#chat">Open Live Chat</a>
+            <a class="btn btn-secondary" href="#rules">Read Rules</a>
+            <a class="btn btn-secondary" href="https://discord.gg/XCmMuF5bkb" target="_blank">Join Discord</a>
+          </div>
+          <div class="quick-links">
+            <div class="mini-card"><strong>Alliance</strong><span class="muted">WAR</span></div>
+            <div class="mini-card"><strong>State</strong><span class="muted">590</span></div>
+            <div class="mini-card"><strong>HQ</strong><span class="muted">WAR590</span></div>
+          </div>
+            <div class="mini-card"><strong>State</strong><span class="muted">#590</span></div>
+            <div class="mini-card"><strong>Status</strong><span class="muted">Active • Recruiting</span></div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="card server-card">
+            <div class="server-top">
+              <div class="logo"><img src="war_logo.png" alt="WAR Alliance Logo" style="width:100%;height:100%;object-fit:contain;border-radius:14px;"/></div>
+              <div>
+                <div class="server-name">WAR #590</div>
+                <div class="muted">Est. Mar 2026</div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-chip">🟢 Active community</div>
+              <div class="stat-chip">⚔ Discord + web fallback</div>
+              <div class="stat-chip">📣 Recruiting warriors</div>
+            </div>
+            <p class="tiny muted" style="margin:0; line-height:1.7;">
+              WAR Alliance × State 590 × Tiles Survive. Official headquarters for coordination, announcements,
+              guides, and temporary communication access when Discord is blocked or restricted.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-top:0;">Welcome</h3>
+            <p class="muted" style="margin:0; line-height:1.7;">
+              Hello and a warm welcome to all new members. We’re excited to have you join the WAR alliance community
+              for Tiles Survive. Read the rules, use the proper channels, and coordinate with the alliance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>About WAR</h2>
+            <div class="muted">A temporary web HQ built for access, coordination, and survival.</div>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="rule-box">
+            <h3 style="margin-top:0;">⚔ Organized Leadership</h3>
+            <p class="muted" style="margin:0; line-height:1.7;">Structured alliance leadership, coordination, recruitment, and event planning.</p>
+          </div>
+          <div class="rule-box">
+            <h3 style="margin-top:0;">📚 Shared Knowledge</h3>
+            <p class="muted" style="margin:0; line-height:1.7;">Efficient spending, power progression, hero priorities, and build strategies in one place.</p>
+          </div>
+          <div class="rule-box">
+            <h3 style="margin-top:0;">🌍 Backup Communication</h3>
+            <p class="muted" style="margin:0; line-height:1.7;">Browser access for players who cannot use Discord because of local restrictions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="spending">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Efficient Spending Guide</h2>
+            <div class="muted">Simple spending tiers for better value and fewer bad buys.</div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="tier">
+            <h3>💸 Low Spender <span class="muted tiny">≈ €/$20 per month</span></h3>
+            <ul>
+              <li>1-Month Pass</li>
+              <li>4× Weekly Pass</li>
+              <li>Doomsday — choose the hero you are upgrading, not the newest</li>
+              <li>Optional: Hero Weapon Pass</li>
+            </ul>
+          </div>
+          <div class="tier">
+            <h3>💳 Medium Spender <span class="muted tiny">≈ €/$120 per month</span></h3>
+            <ul>
+              <li>Everything from Low Spender tier</li>
+              <li>Daily purchase of Daily Must-Have or occasional SSR Hero 4000–5000% value</li>
+            </ul>
+          </div>
+          <div class="tier">
+            <h3>💳 Mid–High Spender <span class="muted tiny">≈ €/$150–200 per month</span></h3>
+            <ul>
+              <li>Everything from previous tiers</li>
+              <li>Crates of Choice (8 blueprints)</li>
+              <li>Chief Collection Blueprint Pass</li>
+              <li>Situational: Buy Behemoth / Hero offers only if 3000%+ value</li>
+            </ul>
+          </div>
+          <div class="tier">
+            <h3>🦾 Big Spender <span class="muted tiny">≈ €/$250–500</span></h3>
+            <ul>
+              <li>Everything from previous tiers</li>
+              <li>10k Skill Book Packs when 10-starring a hero</li>
+              <li>Sunday Customized Deals bundle up to €/$20</li>
+              <li>Value Card – Weekly Intel</li>
+            </ul>
+          </div>
+          <div class="tier" style="grid-column: 1 / -1;">
+            <h3>🐋 Whale <span class="muted tiny">≈ €/$500+</span></h3>
+            <ul>
+              <li>Everything from all lower tiers</li>
+              <li>Friday Event – Chief Boost: buy until blueprint value drops below 1 blueprint per €/$1</li>
+              <li>Behemoth enhancement / upgrade offers until value drops below about €/$20</li>
+              <li>Skill Manual Bundle – 1 purchase</li>
+              <li>Reforge Special Offer – buy until value is below 1 hammer per €/$0.1</li>
+              <li>Alloy Gear Bundle – buy until value is lower than 1 armor per €/$20</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="power">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Power Upgrade Guide</h2>
+            <div class="muted">Fast, efficient strength without wasting upgrades.</div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="rule-box">
+            <h3 style="margin-top:0;">⚙ Core Priorities</h3>
+            <ul class="guide-list">
+              <li><strong>Hero Weapons:</strong> focus on bonuses that benefit your whole team composition.</li>
+              <li><strong>Skill Books:</strong> focus on one hero at a time. Get all 3 skills to 30 or 35 first.</li>
+              <li><strong>Hero Stars:</strong> your main 5 heroes should reach 8 stars first, then 9★ and 10★.</li>
+              <li><strong>Factions:</strong> 5 heroes of the same faction gives +25% Hero &amp; Troop HP.</li>
+            </ul>
+          </div>
+          <div class="rule-box">
+            <h3 style="margin-top:0;">🛡 Armor</h3>
+            <ul class="guide-list">
+              <li>Get full golden armor on every hero in your main army or march.</li>
+              <li>Focus mainly on 5 sets of golden armor.</li>
+              <li>Upgrade evenly: 30 → 40 → 50.</li>
+              <li>Enhance evenly: 1 star across all pieces, then 2, 4, and 6 for reforge-able buffs.</li>
+            </ul>
+          </div>
+          <div class="rule-box">
+            <h3 style="margin-top:0;">🐉 Behemoths</h3>
+            <ul class="guide-list">
+              <li>Unlock new skills every 15 stars.</li>
+              <li>Focus one behemoth to hit major milestones first: 15, 30, 45, 60 stars.</li>
+              <li>After milestone hits, upgrade more evenly across behemoths.</li>
+            </ul>
+          </div>
+          <div class="rule-box">
+            <h3 style="margin-top:0;">🔬 Research + Construction</h3>
+            <ul class="guide-list">
+              <li><strong>Research priority:</strong> Alliance Duel → Special Forces → Troops → Heroes.</li>
+              <li>Ignore troop load research if the goal is pure march/combat power.</li>
+              <li><strong>Construction:</strong> Power Plant to level 30 ASAP.</li>
+              <li>All 3 golden statues to level 30.</li>
+            </ul>
+          </div>
+          <div class="rule-box" style="grid-column: 1 / -1;">
+            <h3 style="margin-top:0;">📍 Chief Gear Priority</h3>
+            <ul class="guide-list">
+              <li>1. Watch / Timer</li>
+              <li>2. Knife</li>
+              <li>3. Headlamp / Helmet</li>
+              <li>4. Journal / Book</li>
+              <li>5. Binoculars</li>
+              <li>6. Compass</li>
+              <li>Tier upgrades give major power spikes. Priority is based on march power gain.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rules">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Rules &amp; Access</h2>
+            <div class="muted">Keep the alliance clean, useful, and worth joining.</div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="rule-box">
+            <h3 style="margin-top:0;">📜 Server Rules</h3>
+            <ul class="rules-list">
+              <li>Be respectful to all members.</li>
+              <li>Use the proper channels.</li>
+              <li>Listen to Leaders, Admins, and King’s Guard.</li>
+              <li>No spam or self-promotion.</li>
+              <li>No piracy, NSFW, or suspicious content unless in the proper channel.</li>
+              <li>Do not share personal information.</li>
+              <li>Keep alliance strategies private.</li>
+              <li>Use common sense.</li>
+            </ul>
+          </div>
+          <div class="rule-box">
+            <h3 style="margin-top:0;">🛡 Verification</h3>
+            <p class="muted" style="line-height:1.75; margin:0 0 10px;">
+              To gain access, upload a screenshot of your in-game profile showing your player name,
+              state number, and alliance tag. Do not blur your in-game name or alliance information.
+            </p>
+            <p class="muted" style="line-height:1.75; margin:0;">
+              A King’s Guard or Admin will review your screenshot and grant access.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Announcements</h2>
+            <div class="muted">Use this section for events, reminders, and alliance news.</div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="announcement">
+            <div class="date">Template</div>
+            <div>
+              <strong>Discord restricted?</strong>
+              <div class="muted">Use the live chat below as the temporary fallback while official coordination remains on Discord whenever possible.</div>
+            </div>
+          </div>
+          <div class="announcement">
+            <div class="date">Template</div>
+            <div>
+              <strong>Recruitment Open</strong>
+              <div class="muted">WAR is recruiting active players ready to coordinate, grow, and fight with structure.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="chat">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Live Chat</h2>
+            <div class="muted">Temporary backup communication for members who cannot access Discord.</div>
+          </div>
+        </div>
+
+        <div class="chat-frame">
+
+          <p class="muted" style="margin-top:0; line-height:1.7;">
+            This is the temporary WAR communication room. If Discord is blocked in your region,
+            use this chat to coordinate with alliance members.
+          </p>
+
+          <p class="muted" style="margin-bottom:14px;">
+            Open chat in a new tab if the embed doesn't load:
+            <a href="https://tlk.io/war590hq" target="_blank">https://tlk.io/war590hq</a>
+          </p>
+
+          <iframe 
+            src="https://tlk.io/war590hq"
+            width="100%"
+            height="500"
+            style="border:none; border-radius:14px;">
+          </iframe>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      WAR #590 HQ — Temporary web headquarters for State 590. Built for access, coordination, and survival.
+    </div>
+  </footer>
+</body>
+</html>
