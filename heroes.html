@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WAR #590 HQ — Heroes & Factions</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/auth.js"></script>
+  <script>requireAuth();</script>
+</head>
+<body>
+<header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/images/war_logo.png" alt="WAR logo" />
+        <div>WAR #590 HQ</div>
+      </div>
+      <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="spending.html">Spending</a>
+        <a href="power.html">Power</a>
+        <a href="heroes.html">Heroes</a>
+        <a href="events.html">Events</a>
+        <a href="weekly.html">Weekly</a>
+        <a href="buildings.html">Buildings</a>
+        <a href="rules.html">Rules</a>
+        <a href="chat.html">Chat</a>
+      </nav>
+      <button class="logout-btn" onclick="logout()">Log out</button>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="panel">
+          <div class="eyebrow">🧩 Heroes &amp; Factions Overview</div>
+          <h1><span class="gradient-text">Know the hero types.</span><br />Know the faction edges.</h1>
+          <p class="lead">Heroes are split by type and faction. Understanding range, frontline placement, and faction advantage is the base layer of building good marches.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card"><h3>⚔ Hero Types</h3><ul class="list"><li><strong>Guards</strong> — Close combat heroes, frontline.</li><li><strong>Gunners</strong> — Medium range, slightly behind Guards.</li><li><strong>Marksmen</strong> — Long range attackers, backline.</li></ul></div>
+        <div class="card"><h3>🏳️ Factions &amp; Bonuses</h3><ul class="list"><li><strong>Rovers (Yellow)</strong> — DPS and healing, +20% damage to Stalwarts.</li><li><strong>Stalwarts (Green)</strong> — Defense and buffs, +20% damage to Aeronauts.</li><li><strong>Aeronauts (Light Blue)</strong> — Buffs and balanced, +20% damage to Rovers.</li><li><strong>Mariners (Blue)</strong> — Wild cards, no faction advantage or disadvantage.</li></ul></div>
+        <div class="card"><h3>📈 Investment Rules</h3><ul class="list"><li>Do not grow R/SR skills above level 10.</li><li>Reserve manuals for innate SSR heroes.</li><li>Resetting heroes does not return skill manuals.</li><li>Reset only sends the level back to 1.</li></ul></div>
+        <div class="card"><h3>⭐ SSR Progression</h3><ul class="list"><li>SR heroes can become SSR in seasons, but they still function as weaker purple heroes.</li><li>Cycle them out for innate gold heroes as soon as possible.</li><li>Mariner replacements are optional before T10 troops and faction specialist trees.</li></ul></div>
+      </div>
+    </section>
+  </main>
+<footer>
+    <div class="container">WAR #590 HQ — temporary state command website built for access, guides, and coordination.</div>
+  </footer>
+</body>
+</html>

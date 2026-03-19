@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WAR #590 HQ — External Chat</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/auth.js"></script>
+  <script>requireAuth();</script>
+</head>
+<body>
+<header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/images/war_logo.png" alt="WAR logo" />
+        <div>WAR #590 HQ</div>
+      </div>
+      <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="spending.html">Spending</a>
+        <a href="power.html">Power</a>
+        <a href="heroes.html">Heroes</a>
+        <a href="events.html">Events</a>
+        <a href="weekly.html">Weekly</a>
+        <a href="buildings.html">Buildings</a>
+        <a href="rules.html">Rules</a>
+        <a href="chat.html">Chat</a>
+      </nav>
+      <button class="logout-btn" onclick="logout()">Log out</button>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="panel">
+          <div class="eyebrow">🌍 External Chat</div>
+          <h1><span class="gradient-text">Open it outside the site.</span><br />It works better that way.</h1>
+          <p class="lead">You asked for the chat to open outside the website instead of using an embed. This page does exactly that so the external room works more reliably on phones and weird browsers.</p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="https://tlk.io/war590hq" target="_blank">Open WAR590 Chat</a>
+            <a class="btn btn-secondary" href="https://discord.gg/XCmMuF5bkb" target="_blank">Open Discord</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="notice chat-action">
+          <h3>Recommended use</h3>
+          <p class="lead center" style="margin:0 auto 18px; max-width:46ch;">Use your in-game name as your nickname in the chat room. Treat it as a temporary fallback, not a replacement for Discord.</p>
+          <a class="btn btn-danger" href="https://tlk.io/war590hq" target="_blank">Launch External Chat</a>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer>
+    <div class="container">WAR #590 HQ — temporary state command website built for access, guides, and coordination.</div>
+  </footer>
+</body>
+</html>

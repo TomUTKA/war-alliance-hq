@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WAR #590 HQ — Building Requirements</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/auth.js"></script>
+  <script>requireAuth();</script>
+</head>
+<body>
+<header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/images/war_logo.png" alt="WAR logo" />
+        <div>WAR #590 HQ</div>
+      </div>
+      <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="spending.html">Spending</a>
+        <a href="power.html">Power</a>
+        <a href="heroes.html">Heroes</a>
+        <a href="events.html">Events</a>
+        <a href="weekly.html">Weekly</a>
+        <a href="buildings.html">Buildings</a>
+        <a href="rules.html">Rules</a>
+        <a href="chat.html">Chat</a>
+      </nav>
+      <button class="logout-btn" onclick="logout()">Log out</button>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="panel">
+          <div class="eyebrow">🏗 Building Requirements</div>
+          <h1><span class="gradient-text">Upgrade planning.</span><br />Without blind guessing.</h1>
+          <p class="lead">The building upgrade reference image is here so members can check time, cost, and prerequisite structure requirements before committing.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container grid-2">
+        <div class="image-panel">
+          <img src="assets/images/building_table.png" alt="Building requirement table" />
+          <div class="image-caption">Reference image covering new levels, time needed, resource costs, and other building requirements.</div>
+        </div>
+        <div class="card">
+          <h3>How to use this page</h3>
+          <ul class="list"><li>Check the target level first.</li><li>Look across for time and total resource cost.</li><li>Check the right-most column for prerequisite buildings.</li><li>Queue the supporting building first so you do not block your own progress later.</li><li>Use this when planning power plant push days or construction VS days.</li></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer>
+    <div class="container">WAR #590 HQ — temporary state command website built for access, guides, and coordination.</div>
+  </footer>
+</body>
+</html>
