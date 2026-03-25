@@ -1,59 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WAR #590 HQ — Power Guide</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAR #590 – Power Guide</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/auth.js"></script>
-  <script>requireAuth();</script>
 </head>
-<body>
+<body onload="guardPage()">
+
 <header class="topbar">
-    <div class="container nav">
-      <div class="brand">
-        <img src="assets/images/war_logo.png" alt="WAR logo" />
-        <div>WAR #590 HQ</div>
+  <div class="container nav">
+    <a class="brand" href="home.html">
+      <img src="assets/images/war_logo.png" alt="WAR logo" />
+      <div>
+        WAR #590 HQ
+        <span class="sub">STATE 590 • TILES SURVIVE</span>
       </div>
-      <nav class="nav-links">
-        <a href="home.html">Home</a>
-        <a href="spending.html">Spending</a>
-        <a href="power.html">Power</a>
-        <a href="heroes.html">Heroes</a>
-        <a href="events.html">Events</a>
-        <a href="weekly.html">Weekly</a>
-        <a href="buildings.html">Buildings</a>
-        <a href="rules.html">Rules</a>
-        <a href="chat.html">Chat</a>
-      </nav>
-      <button class="logout-btn" onclick="logout()">Log out</button>
+    </a>
+    <nav class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="spending.html">Spending</a>
+      <a href="power.html">Power</a>
+      <a href="heroes.html">Heroes</a>
+      <a href="events.html">Events</a>
+      <a href="weekly.html">Weekly</a>
+      <a href="buildings.html">Buildings</a>
+      <a href="rules.html">Rules</a>
+      <a href="comms.html">Comms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content-page">
+  <section class="page-hero">
+    <div class="container">
+      <div class="kicker">Power Upgrade Guide</div>
+      <div class="page-title">
+        <h2>Power Guide</h2>
+      </div>
+      <p class="lead">Simple priorities for fast, efficient strength. This keeps the full structure from the earlier guide instead of trimming it down.</p>
+
+<div class="page-nav">
+  <a href="home.html">Home</a>
+  <a href="spending.html">Spending</a>
+  <a href="power.html">Power</a>
+  <a href="heroes.html">Heroes</a>
+  <a href="events.html">Events</a>
+  <a href="weekly.html">Weekly</a>
+  <a href="buildings.html">Buildings</a>
+  <a href="rules.html">Rules</a>
+  <a href="comms.html">Comms</a>
+</div>
+
     </div>
-  </header>
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="panel">
-          <div class="eyebrow">⚙ Power Upgrade Guide</div>
-          <h1><span class="gradient-text">Fast, efficient strength.</span><br />No wasted upgrades.</h1>
-          <p class="lead">These are the core priorities to build march power cleanly and avoid scattering upgrades across weak targets.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card"><h3>🛡 Hero Weapons</h3><ul class="list"><li>Upgrade weapons that benefit your whole team composition.</li><li>Team-wide bonuses beat single-hero bonuses.</li></ul></div>
-        <div class="card"><h3>🛡 Armor</h3><ul class="list"><li>Get full golden armor on every hero in your main march.</li><li>Focus mainly on 5 full sets.</li><li>Upgrade evenly: 30 → 40 → 50.</li><li>Enhance evenly: 1 star across all pieces, then 2, 4, and 6.</li></ul></div>
-        <div class="card"><h3>📚 Skill Books</h3><ul class="list"><li>Focus on one hero at a time.</li><li>Get all 3 skills to 30 or 35 first.</li><li>Do not spread books too early.</li></ul></div>
-        <div class="card"><h3>🐉 Behemoths</h3><ul class="list"><li>Unlock new skills every 15 stars.</li><li>Push one behemoth to each milestone first.</li><li>Then upgrade more evenly afterward.</li></ul></div>
-        <div class="card"><h3>📍 Chief Gear Priority</h3><ol class="list"><li>Watch / Timer</li><li>Knife</li><li>Headlamp / Helmet</li><li>Journal / Book</li><li>Binoculars</li><li>Compass</li></ol><p class="small">Priority is based on march power gain.</p></div>
-        <div class="card"><h3>🔬 Research + Construction</h3><ul class="list"><li>Research: Alliance Duel → Special Forces → Troops → Heroes.</li><li>Ignore troop load if the goal is pure combat power.</li><li>Power Plant to level 30 ASAP.</li><li>All 3 golden statues to level 30.</li></ul></div>
-        <div class="card"><h3>⭐ Hero Stars</h3><ul class="list"><li>Main 5 heroes should reach 8 stars first.</li><li>Then move them to 9★ and 10★.</li><li>Focus only on your main team first.</li></ul></div>
-        <div class="card"><h3>🛡 Factions</h3><ul class="list"><li>5 heroes of the same faction gives +25% Hero &amp; Troop HP.</li><li>Full faction teams become more efficient later in progression.</li></ul></div>
-      </div>
-    </section>
-  </main>
-<footer>
-    <div class="container">WAR #590 HQ — temporary state command website built for access, guides, and coordination.</div>
-  </footer>
+  </section>
+  <section class="section">
+    <div class="container grid-2">
+
+<div class="guide-card">
+  <h3>🛡️ Hero Weapons</h3>
+  <ul>
+    <li>Upgrade weapons that benefit your whole team composition.</li>
+    <li>Team-wide bonuses are better than single-hero bonuses.</li>
+  </ul>
+</div>
+<div class="guide-card">
+  <h3>🏰 Armor</h3>
+  <ul>
+    <li>Get full golden armor on every hero in your main army / march. Focus mainly on 5 sets of golden armor.</li>
+    <li>Upgrade evenly: 30 → 40 → 50 → etc.</li>
+    <li>Enhance evenly: 1 star across all pieces, then 2, 4 and 6. Major checkpoints are 2, 4 and 6 stars because all unlock a reforge-able buff.</li>
+  </ul>
+</div>
+<div class="guide-card">
+  <h3>📚 Skill Books</h3>
+  <ul>
+    <li>Focus on <strong>one hero at a time</strong>.</li>
+    <li>Get all 3 skills to 30 (or 35) for a huge stat boost.</li>
+    <li>Do not spread books across many heroes early.</li>
+  </ul>
+</div>
+<div class="guide-card">
+  <h3>🐉 Behemoths</h3>
+  <ul>
+    <li>Unlock new skills every 15 stars.</li>
+    <li>Focus one behemoth to hit each milestone.</li>
+    <li>Switch to more even upgrades after milestone hits such as 15 / 30 / 45 / 60 stars or level 50 / 100 / 150 / 200.</li>
+  </ul>
+</div>
+<div class="guide-card">
+  <h3>⚙️ Chief Gear Priority</h3>
+  <ul>
+    <li>1. Watch / Timer</li>
+    <li>2. Knife</li>
+    <li>3. Headlamp / Helmet</li>
+    <li>4. Journal / Book</li>
+    <li>5. Binoculars</li>
+    <li>6. Compass</li>
+    <li>Tier upgrades are big stat boosts. Priority is based on march power gain.</li>
+  </ul>
+</div>
+<div class="guide-card">
+  <h3>🔬 Research Priority</h3>
+  <ul>
+    <li>1. Alliance Duel</li>
+    <li>2. Special Forces — after VIP 8, transfer excess gems to stamina for hunting level 30s only after unlocking Random Crate in Infected Conquest Research</li>
+    <li>3. Troops</li>
+    <li>4. Heroes</li>
+    <li>Only invest in research that boosts march / combat power. Ignore troop load.</li>
+  </ul>
+</div>
+<div class="guide-card">
+  <h3>🏗️ Construction</h3>
+  <ul>
+    <li>Power Plant → level 30 ASAP</li>
+    <li>All 3 golden statues → level 30</li>
+  </ul>
+</div>
+<div class="guide-card">
+  <h3>⭐ Hero Stars & Factions</h3>
+  <ul>
+    <li>Main 5 heroes should reach <strong>8 stars</strong> first, then 9★ → 10★.</li>
+    <li>Focus only on your main team first.</li>
+    <li>Running 5 heroes of the same faction gives <strong>+25% Hero & Troop HP</strong>.</li>
+    <li>To get the full counter-faction buff (20% damage), you’ll need 5× of Stalwart, Rover or Aeronaut.</li>
+  </ul>
+</div>
+<div class="guide-card" style="grid-column:1/-1">
+  <h3>✅ Summary</h3>
+  <ul>
+    <li>Hit milestones: 3×30 skills, 8★ heroes, tier gear.</li>
+    <li>Focus only on upgrades that directly boost power.</li>
+    <li>Full faction teams give a huge HP advantage.</li>
+  </ul>
+</div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    WAR #590 HQ — built and maintained by WAR as a structured headquarters for the alliance and the wider state.
+    If Discord is blocked for you, use Revolt as the primary backup communication platform.
+  </div>
+</footer>
+
 </body>
 </html>

@@ -1,93 +1,121 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WAR #590 HQ — Home</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAR #590 HQ</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/auth.js"></script>
-  <script>requireAuth();</script>
 </head>
-<body>
+<body onload="guardPage()">
+
 <header class="topbar">
-    <div class="container nav">
-      <div class="brand">
-        <img src="assets/images/war_logo.png" alt="WAR logo" />
-        <div>WAR #590 HQ</div>
+  <div class="container nav">
+    <a class="brand" href="home.html">
+      <img src="assets/images/war_logo.png" alt="WAR logo" />
+      <div>
+        WAR #590 HQ
+        <span class="sub">STATE 590 • TILES SURVIVE</span>
       </div>
-      <nav class="nav-links">
-        <a href="home.html">Home</a>
-        <a href="spending.html">Spending</a>
-        <a href="power.html">Power</a>
-        <a href="heroes.html">Heroes</a>
-        <a href="events.html">Events</a>
-        <a href="weekly.html">Weekly</a>
-        <a href="buildings.html">Buildings</a>
-        <a href="rules.html">Rules</a>
-        <a href="chat.html">Chat</a>
-      </nav>
-      <button class="logout-btn" onclick="logout()">Log out</button>
-    </div>
-  </header>
-  <main>
-    <section class="page-hero">
-      <div class="container hero-grid">
-        <div class="panel">
-          <img class="hero-logo-float" src="assets/images/war_logo.png" alt="WAR emblem" />
-          <div class="eyebrow">🛡 WAR Alliance × State 590 × Tiles Survive</div>
-          <h1><span class="gradient-text">Fire &amp; Blood.</span><br />Command. Strategy. Victory.</h1>
-          <p class="lead">Official headquarters for WAR in State 590. This version splits the content into separate sections so the site stays usable, cleaner, and easier to update.</p>
-          <div class="button-row">
-            <a class="btn btn-primary" href="https://discord.gg/XCmMuF5bkb" target="_blank">Join Discord</a>
-            <a class="btn btn-secondary" href="chat.html">Open Chat Page</a>
-            <a class="btn btn-secondary" href="events.html">View Events</a>
-          </div>
-          <div class="quick-links" style="margin-top:18px;">
-            <div class="mini-card"><strong>Alliance</strong><span>WAR</span></div>
-            <div class="mini-card"><strong>State</strong><span>590</span></div>
-            <div class="mini-card"><strong>Access</strong><span>Password-gated</span></div>
-            <div class="mini-card"><strong>Fallback</strong><span>External chat link</span></div>
-          </div>
+    </a>
+    <nav class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="spending.html">Spending</a>
+      <a href="power.html">Power</a>
+      <a href="heroes.html">Heroes</a>
+      <a href="events.html">Events</a>
+      <a href="weekly.html">Weekly</a>
+      <a href="buildings.html">Buildings</a>
+      <a href="rules.html">Rules</a>
+      <a href="comms.html">Comms</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-panel">
+        <div class="eyebrow">⚔ WAR Alliance × State 590 × Tiles Survive</div>
+        <h1><span class="gradient">Fire &amp; Blood.</span><br>Command. Strategy. Victory.</h1>
+        <p class="lead">
+          Official headquarters for the WAR alliance in State 590. This site is the structured information hub for
+          guides, event strategy, building references, and fallback communication when Discord is blocked or restricted.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="comms.html">Open Comms Hub</a>
+          <a class="btn btn-secondary" href="rules.html">Read Rules</a>
+          <a class="btn btn-secondary" href="https://discord.gg/XCmMuF5bkb" target="_blank">Join Discord</a>
+          <a class="btn btn-revolt" href="https://rvlt.gg/s4f2SPx7" target="_blank">Use Revolt</a>
         </div>
-        <div class="card">
-          <div class="server-top">
-            <div class="logo-box"><img src="assets/images/war_logo.png" alt="WAR logo" /></div>
+        <div class="quick-links">
+          <div class="stat-chip">Alliance: WAR</div>
+          <div class="stat-chip">State: 590</div>
+          <div class="stat-chip">Backup comms ready</div>
+          <div class="stat-chip">Use in-game name everywhere</div>
+        </div>
+        <div class="page-nav">
+          <a href="spending.html">Spending Guide</a>
+          <a href="power.html">Power Guide</a>
+          <a href="heroes.html">Heroes & Factions</a>
+          <a href="events.html">Event Guides</a>
+          <a href="weekly.html">Weekly Overview</a>
+          <a href="buildings.html">Building Requirements</a>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="side-card card">
+          <div class="row">
+            <img class="logo-lg" src="assets/images/war_logo.png" alt="WAR logo">
             <div>
-              <div class="server-name">WAR #590</div>
-              <p class="small" style="margin:6px 0 0;">Shared state communication and alliance strategy hub.</p>
+              <div style="font-size:24px;font-weight:900">WAR #590</div>
+              <div class="muted">Est. Mar 2026</div>
             </div>
           </div>
-          <div class="stat-row" style="margin-top:16px;">
-            <div class="stat-chip">🟢 Active HQ</div>
-            <div class="stat-chip">📚 Multi-page guides</div>
-            <div class="stat-chip">⚔ State 590</div>
+          <div class="stat-row">
+            <div class="stat-chip">Hosted by WAR</div>
+            <div class="stat-chip">Built for the wider state too</div>
+            <div class="stat-chip">Structured, not messy</div>
           </div>
-          <p style="margin-top:18px;">Use the section buttons below to move through the site!.</p>
+          <p class="muted" style="line-height:1.75;margin:14px 0 0">
+            WAR built this headquarters quickly so the state has somewhere organized to work from. It covers guides,
+            event strategy, requirements, and communication links. If you cannot access Discord, use Revolt instead.
+          </p>
+        </div>
+        <div class="side-card card">
+          <h3>Welcome</h3>
+          <p class="muted" style="line-height:1.75;margin:0">
+            Hello and a warm welcome to all new members and visitors. This space supports both WAR members and the
+            wider state. Keep your nickname matching your in-game name, use the proper channels, and keep things efficient.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>HQ Sections</h2>
-          <div class="muted">Fast links to the separated pages.</div>
-        </div>
-        <div class="link-grid">
-          <a href="spending.html"><h3>💸 Spending Guide</h3><p>Low spender to whale priorities.</p></a>
-          <a href="power.html"><h3>⚙ Power Upgrade Guide</h3><p>Gear, books, construction, behemoths, and progression.</p></a>
-          <a href="heroes.html"><h3>🧩 Heroes &amp; Factions</h3><p>Types, factions, bonuses, and upgrade logic.</p></a>
-          <a href="events.html"><h3>🏆 Event Guides</h3><p>Alliance Siege, Turbo Turtle, VS, and Reservoir Raid.</p></a>
-          <a href="weekly.html"><h3>📅 Weekly Strategy</h3><p>Reference image plus quick day-by-day notes.</p></a>
-          <a href="buildings.html"><h3>🏗 Building Requirements</h3><p>Image reference and upgrade planning notes.</p></a>
-          <a href="rules.html"><h3>📜 Rules &amp; Access</h3><p>Server rules, verification, and external visitor guidance.</p></a>
-          <a href="chat.html"><h3>🌍 External Chat</h3><p>Opens outside the website so it works more reliably.</p></a>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>What’s Here</h2>
+          <div class="muted">Everything split properly instead of dumping it all on one page.</div>
         </div>
       </div>
-    </section>
-  </main>
-<footer>
-    <div class="container">WAR #590 HQ — temporary state command website built for access, guides, and coordination.</div>
-  </footer>
+      <div class="grid-3">
+        <div class="tile"><h3>📘 Full Guides</h3><p class="muted">Spending, power progression, heroes, factions, and event strategy with nothing cut down.</p></div>
+        <div class="tile"><h3>🖼 Visual References</h3><p class="muted">Weekly strategy overview and building requirement chart on their own pages.</p></div>
+        <div class="tile"><h3>🌍 Communication</h3><p class="muted">Discord, Revolt, and a TLK room. If Discord is blocked, use Revolt.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    WAR #590 HQ — built and maintained by WAR as a structured headquarters for the alliance and the wider state.
+    If Discord is blocked for you, use Revolt as the primary backup communication platform.
+  </div>
+</footer>
+
 </body>
 </html>

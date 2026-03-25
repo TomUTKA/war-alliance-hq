@@ -1,31 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WAR #590 HQ Access</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/auth.js"></script>
-  <script>
-    if (isAuthenticated()) {
-      window.location.href = "home.html";
-    }
-  </script>
 </head>
 <body>
-  <main class="login-shell">
-    <div class="login-card">
-      <img class="login-logo" src="assets/images/war_logo.png" alt="WAR logo" />
-      <div class="eyebrow">⚔ WAR Alliance × State 590</div>
-      <h1><span class="gradient-text">WAR #590 HQ</span></h1>
-      <p class="lead center">This temporary web HQ is password protected. Enter the shared password to access the guides, strategy pages, and external chat link.</p>
-      <form class="form-row" onsubmit="handleLogin(event)">
-        <input id="password" class="input" type="password" placeholder="Enter password" autocomplete="off" />
-        <button class="btn btn-primary" type="submit">Enter HQ</button>
-        <div id="error" class="error"></div>
-      </form>
-      <p class="small">To change the password later, edit <strong>assets/js/auth.js</strong> and replace <strong>WAR590</strong>.</p>
+  <div class="password-wrap">
+    <div class="password-card">
+      <img src="assets/images/war_logo.png" alt="WAR logo">
+      <div class="eyebrow">⚔ WAR Alliance HQ Access Gate</div>
+      <h2><span class="gradient">WAR #590</span></h2>
+      <p class="muted" style="line-height:1.8">
+        Enter the site password to continue.<br>
+        This headquarters contains alliance and state coordination information.
+      </p>
+      <input id="password" type="password" placeholder="Enter password" onkeydown="if(event.key==='Enter') unlockSite()">
+      <button onclick="unlockSite()">Enter HQ</button>
+      <div id="error" class="err"></div>
+      <div class="note">
+        Password is set to <strong>WAR590</strong>.
+      </div>
     </div>
-  </main>
+  </div>
 </body>
 </html>

@@ -1,33 +1,17 @@
+
 const WAR_PASSWORD = "WAR590";
-const WAR_STORAGE_KEY = "war590_access_granted";
-
-function isAuthenticated() {
-  return localStorage.getItem(WAR_STORAGE_KEY) === "true";
-}
-
-function requireAuth() {
-  if (!isAuthenticated()) {
-    window.location.href = "index.html";
-  }
-}
-
-function handleLogin(event) {
-  event.preventDefault();
-  const input = document.getElementById("password");
-  const error = document.getElementById("error");
-  if (!input) return;
-
-  if (input.value === WAR_PASSWORD) {
-    localStorage.setItem(WAR_STORAGE_KEY, "true");
+function unlockSite(){
+  const value = document.getElementById("password").value;
+  const err = document.getElementById("error");
+  if(value === WAR_PASSWORD){
+    sessionStorage.setItem("war590_auth","ok");
     window.location.href = "home.html";
   } else {
-    if (error) error.textContent = "Wrong password. Try again.";
-    input.value = "";
-    input.focus();
+    err.textContent = "Wrong password.";
   }
 }
-
-function logout() {
-  localStorage.removeItem(WAR_STORAGE_KEY);
-  window.location.href = "index.html";
+function guardPage(){
+  if(sessionStorage.getItem("war590_auth") !== "ok"){
+    window.location.href = "index.html";
+  }
 }

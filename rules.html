@@ -1,55 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WAR #590 HQ — Rules & Access</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAR #590 – Rules & Access</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/auth.js"></script>
-  <script>requireAuth();</script>
 </head>
-<body>
+<body onload="guardPage()">
+
 <header class="topbar">
-    <div class="container nav">
-      <div class="brand">
-        <img src="assets/images/war_logo.png" alt="WAR logo" />
-        <div>WAR #590 HQ</div>
+  <div class="container nav">
+    <a class="brand" href="home.html">
+      <img src="assets/images/war_logo.png" alt="WAR logo" />
+      <div>
+        WAR #590 HQ
+        <span class="sub">STATE 590 • TILES SURVIVE</span>
       </div>
-      <nav class="nav-links">
-        <a href="home.html">Home</a>
-        <a href="spending.html">Spending</a>
-        <a href="power.html">Power</a>
-        <a href="heroes.html">Heroes</a>
-        <a href="events.html">Events</a>
-        <a href="weekly.html">Weekly</a>
-        <a href="buildings.html">Buildings</a>
-        <a href="rules.html">Rules</a>
-        <a href="chat.html">Chat</a>
-      </nav>
-      <button class="logout-btn" onclick="logout()">Log out</button>
+    </a>
+    <nav class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="spending.html">Spending</a>
+      <a href="power.html">Power</a>
+      <a href="heroes.html">Heroes</a>
+      <a href="events.html">Events</a>
+      <a href="weekly.html">Weekly</a>
+      <a href="buildings.html">Buildings</a>
+      <a href="rules.html">Rules</a>
+      <a href="comms.html">Comms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content-page">
+  <section class="page-hero">
+    <div class="container">
+      <div class="kicker">Shared State Space</div>
+      <div class="page-title">
+        <h2>Rules & Access</h2>
+      </div>
+      <p class="lead">This is the merged welcome and rules version so both WAR members and outside visitors feel included while still respecting WAR structure.</p>
+
+<div class="page-nav">
+  <a href="home.html">Home</a>
+  <a href="spending.html">Spending</a>
+  <a href="power.html">Power</a>
+  <a href="heroes.html">Heroes</a>
+  <a href="events.html">Events</a>
+  <a href="weekly.html">Weekly</a>
+  <a href="buildings.html">Buildings</a>
+  <a href="rules.html">Rules</a>
+  <a href="comms.html">Comms</a>
+</div>
+
     </div>
-  </header>
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="panel">
-          <div class="eyebrow">📜 Rules &amp; Access</div>
-          <h1><span class="gradient-text">Keep it clean.</span><br />Keep it usable.</h1>
-          <p class="lead">This server and site are built to help State 590 communicate efficiently. Respect the structure so the whole thing stays worth using.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card"><h3>🛡 Server Rules</h3><ul class="list"><li>Be respectful.</li><li>Use the proper channels.</li><li>Listen to Leaders, Admins, and King’s Guard.</li><li>No spam or self-promotion.</li><li>No piracy, NSFW, or suspicious content unless a proper channel explicitly allows it.</li><li>Do not share personal information.</li><li>Keep alliance strategies private.</li><li>Use common sense.</li></ul></div>
-        <div class="card"><h3>🛡 Verification</h3><ul class="list"><li>Upload a screenshot of your in-game profile.</li><li>Show player name, state number, and alliance tag.</li><li>Do not blur in-game name or alliance information.</li><li>A King’s Guard or Admin will review and grant access.</li></ul></div>
-        <div class="card"><h3>🌍 Shared State Space</h3><p>This setup is hosted by WAR but can also be used by the wider state in controlled sections. The goal is order, not clutter.</p></div>
-        <div class="card"><h3>👑 Moderation</h3><ul class="list"><li>Tag staff in the right channel if you need help.</li><li>Do not spam moderators in DMs.</li><li>Moderators do not handle private DM disputes between members.</li><li>If someone is bothering you privately: block them and report to Discord Trust & Safety.</li></ul></div>
-      </div>
-    </section>
-  </main>
-<footer>
-    <div class="container">WAR #590 HQ — temporary state command website built for access, guides, and coordination.</div>
-  </footer>
+  </section>
+  <section class="section">
+    <div class="container grid-2">
+
+<div class="rule-card" style="grid-column:1/-1">
+  <h3>⚔ Welcome to WAR #590</h3>
+  <p class="muted" style="line-height:1.8;margin:0">
+    Welcome. You’ve entered the <strong>WAR Alliance HQ – State 590</strong>.<br><br>
+    Rules are pushed towards ALL Servers!
+    This server was built to support <strong>both WAR members and the wider state</strong>, providing a structured place
+    for communication, coordination, and information sharing.<br><br>
+    Whether you're part of WAR or visiting from another alliance, you’re welcome here — just respect the space.
+  </p>
+</div>
+<div class="rule-card">
+  <h3>🤝 Introduce Yourself</h3>
+  <ul>
+    <li>Your in-game name</li>
+    <li>Your alliance / state</li>
+    <li>Your power or level</li>
+  </ul>
+</div>
+<div class="rule-card">
+  <h3>📜 Before You Begin</h3>
+  <p class="muted" style="line-height:1.8;margin:0">
+    This server is <strong>hosted and managed by WAR</strong>, so structure and rules matter.
+    Following them ensures everyone can use the space properly.
+  </p>
+</div>
+<div class="rule-card">
+  <h3>🛡 Rules</h3>
+  <ul>
+    <li><strong>Be Respectful:</strong> Treat all members and visitors with respect. No unnecessary conflict.</li>
+    <li><strong>Keep Profiles Appropriate:</strong> Usernames, avatars, and statuses must be suitable for a shared community.</li>
+    <li><strong>No Spamming:</strong> Avoid flooding chats or sending repeated messages.</li>
+    <li><strong>Respect Staff Boundaries:</strong> Tag King’s Guard when needed — do not spam DMs.</li>
+    <li><strong>No Advertising:</strong> No promotions or external links without permission.</li>
+    <li><strong>Protect Privacy:</strong> Do not share personal information.</li>
+    <li><strong>No Hate Speech:</strong> Discrimination or offensive language will not be tolerated.</li>
+    <li><strong>Avoid Politics & Religion:</strong> Keep discussion focused on the game and coordination.</li>
+    <li><strong>No NSFW / Piracy / Suspicious Content:</strong> Unless explicitly allowed in designated channels.</li>
+    <li><strong>Use Common Sense:</strong> If it disrupts the server, don’t do it.</li>
+  </ul>
+</div>
+<div class="rule-card">
+  <h3>⚠ Enforcement</h3>
+  <p class="muted" style="line-height:1.8;margin:0">
+    Failure to follow rules may result in warnings, mutes, or removal.
+  </p>
+</div>
+<div class="rule-card">
+  <h3>👑 King’s Guard</h3>
+  <ul>
+    <li>Moderators maintain order and keep things running smoothly.</li>
+    <li>If you need help, tag them in the appropriate channel.</li>
+    <li>Do not DM them directly without reason.</li>
+  </ul>
+</div>
+<div class="rule-card">
+  <h3>📌 Important</h3>
+  <ul>
+    <li>Moderators do not handle private disputes between members.</li>
+    <li>If someone bothers you in DMs: block them and report to Discord Trust & Safety.</li>
+  </ul>
+</div>
+<div class="rule-card">
+  <h3>🧾 Verification</h3>
+  <ul>
+    <li>Upload a screenshot of your in-game profile.</li>
+    <li>It must show your player name, state number, and alliance tag.</li>
+    <li>Do not blur your in-game name or alliance information.</li>
+  </ul>
+</div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    WAR #590 HQ — built and maintained by WAR as a structured headquarters for the alliance and the wider state.
+    If Discord is blocked for you, use Revolt as the primary backup communication platform.
+  </div>
+</footer>
+
 </body>
 </html>
