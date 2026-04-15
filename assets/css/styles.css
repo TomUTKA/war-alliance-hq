@@ -64,7 +64,7 @@ form.feedback-form{display:grid;gap:14px}
 .link-card h3{margin:0 0 8px}
 .link-card p{margin:0 0 14px;color:var(--muted);line-height:1.7}
 @media(max-width:980px){
-  .nav-drop{position:static;display:block;min-width:unset;background:transparent;border:none;box-shadow:none;padding:0}
-  .nav-group > a::after{content:""}
-  .link-grid{grid-template-columns:1fr}
+  .nav-drop{display:none !important;}
+  .nav-group > a::after{content:"";}
+  .link-grid{grid-template-columns:1fr;}
 }
